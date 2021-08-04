@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<link href="../lib/bootstrap-4.6.0-dist/css/bootstrap.css" rel="stylesheet" />-->
+    <link href="../content/font/fontawesome-5.15.1/css/all.css" rel="stylesheet" />
+    <link href="../css/main.css" rel="stylesheet" />
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="menu">
+        <div class="menu-header">
+            <button id="btnToggle" class="toggle btn-inline"></button>
+            <div class="logo"></div>
+        </div>
+        <div class="menu-body">
+            <div class="menu-item">
+                <div class="menu-icon dashboard-icon"></div>
+                <p>Tổng quan</p>
+            </div>
+            <a class="menu-item" href="covid19.html">
+                <div class="menu-icon document-online-icon"></div>
+                <p>Thông tin covid19</p>
+            </a>
+            <div class="menu-item">
+                <div class="menu-icon report-icon"></div>
+                <p>Theo dõi chi</p>
+            </div>
+            <a class="menu-item" href="customer.html">
+                <div class="menu-icon dashboard-icon"></div>
+                <p>Danh mục khách hàng</p>
+            </a>
+            <a class="menu-item" href="employee.html">
+                <div class="menu-icon dic-employee-icon"></div>
+                <p>Danh mục nhân viên</p>
+            </a>
+            <div class="menu-item">
+                <div class="menu-icon setting-icon"></div>
+                <p>Thiết lập</p>
+            </div>
+        </div>
+        <!--<div class="menu-out"></div>
+        <div class="menu-in"></div>-->
+    </div>
+    <div class="content">
+        <div class="content-header">
+            <div class="header-left">
+                <div class="dropdown" style="border:none;" value="Đông">
+                    <button class="dropdown-main">
+                        <p>Nhà hàng biển Đông</p>
+                        <div class="icon"><i class="fas fa-chevron-down"></i></div>
+                    </button>
+                    <div class="dropdown-data">
+                        <div class="dropdown-item item-selected" valueid="Đông" valuename="Nhà hàng biển Đông">
+                            <i class="fas fa-check"></i>
+                            <p>Nhà hàng biển Đông</p>
+                        </div>
+                        <div class="dropdown-item" valueid="Tây" valuename="Nhà hàng biển Tây">
+                            <i class="fas fa-check"></i>
+                            <p>Nhà hàng biển Tây</p>
+                        </div>
+                        <div class="dropdown-item" valueid="Nam" valuename="Nhà hàng biển Nam">
+                            <i class="fas fa-check"></i>
+                            <p>Nhà hàng biển Nam</p>
+                        </div>
+                        <div class="dropdown-item" valueid="Bắc" valuename="Nhà hàng biển Bắc">
+                            <i class="fas fa-check"></i>
+                            <p>Nhà hàng biển Bắc</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="avatar"></div>
+                <p>Nguyễn Văn Mạnh</p>
+                <div class="option-icon"></div>
+            </div>
+        </div>
+        <div class="covid-page">
+            <div class="covid-header">
+                <h2>Thông tin dịch bệnh covid19</h2>
+                <p>Thời gian hiện tại:  <span>time</span> </p>
+            </div>
+            <div class="covid-body">
+                <div class="covid-total">
+                    <h3 class="title-total">Toàn thế giới</h3>
+                    <div class="big-item confirmed">
+                        <p class="small-item">Số ca nhiễm</p>
+                        <p class="small-item new">Mới: <span></span></p>
+                        <p class="small-item total">Tổng số: <span></span></p>
+                    </div>
+                    <div class="big-item deaths">
+                        <p class="small-item">Số ca tử vong</p>
+                        <p class="small-item new">Mới: <span></span></p>
+                        <p class="small-item total">Tổng số: <span></span></p>
+                    </div>
+                    <div class="big-item recovered">
+                        <p class="small-item">Số ca hồi phục</p>
+                        <p class="small-item new">Mới: <span></span></p>
+                        <p class="small-item total">Tổng số: <span></span></p>
+                    </div>
+                </div>
+                <div class="covid-vn">
+                    <h3 class="title-vn">Cả nước  </h3>
+                    <div class="big-item confirmed">
+                        <p class="small-item">Số ca nhiễm</p>
+                        <p class="small-item new">Mới: <span></span></p>
+                        <p class="small-item total">Tổng số: <span></span></p>
+                    </div>
+                    <div class="big-item deaths">
+                        <p class="small-item">Số ca tử vong</p>
+                        <p class="small-item new">Mới: <span></span></p>
+                        <p class="small-item total">Tổng số: <span></span></p>
+                    </div>
+                    <div class="big-item recovered">
+                        <p class="small-item">Số ca hồi phục</p>
+                        <p class="small-item new">Mới: <span></span></p>
+                        <p class="small-item total">Tổng số: <span></span></p>
+                    </div>
+                </div>
+                <div class="covid-country"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../lib/jquery-3.6.0.min.js"></script>
+    <script src="../js/common/common.js"></script>
+    <script src="../js/common/base.js"></script>
+    <script src="../js/common/dropdown.js"></script>
+    <script src="../js/common/toast-messenger.js"></script>
+    <script src="../js/common/popup.js"></script>
+    <script src="../js/common/table.js"></script>
+    <script src="../js/page/employee-oop.js"></script>
+    <script src="../js/common/covid.js"></script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+﻿select{
+    width: 325px;
+    height: 40px;
+    padding: 10px 16px;
+    border-radius: 4px;
+    outline: none;
+    border: solid 1px #bbbbbb;
+    box-sizing: border-box;
+}
+
+option{
+    width: 325px;
+    height: 40px;
+    padding: 10px 16px;
+    border-radius: 4px;
+    outline: none;
+    border: solid 1px #bbbbbb;
+    box-sizing: border-box;
+}
+
+

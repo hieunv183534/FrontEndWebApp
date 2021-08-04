@@ -1,0 +1,551 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<link href="../lib/bootstrap-4.6.0-dist/css/bootstrap.css" rel="stylesheet" />-->
+    <link href="../content/font/fontawesome-5.15.1/css/all.css" rel="stylesheet" />
+    <link href="../css/main.css" rel="stylesheet" />
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="menu">
+        <div class="menu-header">
+            <div class="toggle"></div>
+            <div class="logo"></div>
+        </div>
+        <div class="menu-body">
+            <div class="menu-item">
+                <div class="menu-icon dashboard-icon"></div>
+                <p>Tổng quan</p>
+            </div>
+            <div class="menu-item">
+                <div class="menu-icon document-online-icon"></div>
+                <p>Hồ sơ online</p>
+            </div>
+            <div class="menu-item">
+                <div class="menu-icon report-icon"></div>
+                <p>Theo dõi chi</p>
+            </div>
+            <a class="menu-item" href="customer.html">
+                <div class="menu-icon dashboard-icon"></div>
+                <p>Danh mục khách hàng</p>
+            </a>
+            <a class="menu-item" href="employee.html">
+                <div class="menu-icon dic-employee-icon"></div>
+                <p>Danh mục nhân viên</p>
+            </a>
+            <div class="menu-item">
+                <div class="menu-icon setting-icon"></div>
+                <p>Thiết lập</p>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="content-header">
+            <div class="header-left">
+                <b>Nhà hàng Biển Đông</b>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="header-right">
+                <div class="avatar"></div>
+                <p>Nguyễn Văn Mạnh</p>
+                <div class="option-icon"></div>
+            </div>
+        </div>
+        <div class="content-body">
+            <div class="content-title">
+                <b>Danh sách khách hàng</b>
+                <button class="button button-icon">
+                    <i class="fas fa-user-plus"></i>
+                    <p>Thêm khách hàng</p>
+                </button>
+            </div>
+            <div class="content-toolbar">
+                <div class="toolbar-left">
+                    <input class="input-icon" type="text" placeholder="Tìm kiếm theo mã, tên hoặc số điện thoại" />
+                    <!--<div class="combobox">
+                        <input type="text" placeholder="Tất cả phòng ban" />
+                        <button><i class="fas fa-chevron-down"></i></button>
+                        <div class="combobox-data">
+                            <div class="combobox-item">
+                                <i class="fas fa-check"></i>
+                                <p>Giám đốc</p>
+                            </div>
+                            <div class="combobox-item item-selected">
+                                <i class="fas fa-check"></i>
+                                <p>Giám đốc</p>
+                            </div>
+                            <div class="combobox-item">
+                                <i class="fas fa-check"></i>
+                                <p>Giám đốc</p>
+                            </div>
+                            <div class="combobox-item">
+                                <i class="fas fa-check"></i>
+                                <p>Giám đốc</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="combobox">
+                        <input type="text" placeholder="Tất cả vị trí" />
+                        <button><i class="fas fa-chevron-down"></i></button>
+                        <div class="combobox-data">
+                            <div class="combobox-item">
+                                <i class="fas fa-check"></i>
+                                <p>Giám đốc</p>
+                            </div>
+                            <div class="combobox-item item-selected">
+                                <i class="fas fa-check"></i>
+                                <p>Giám đốc</p>
+                            </div>
+                            <div class="combobox-item">
+                                <i class="fas fa-check"></i>
+                                <p>Giám đốc</p>
+                            </div>
+                            <div class="combobox-item">
+                                <i class="fas fa-check"></i>
+                                <p>Giám đốc</p>
+                            </div>
+                        </div>
+                    </div>-->
+                    <div class="dropdown">
+                        <button class="dropdown-main">
+                            <p>Tất cả chức vụ</p>
+                            <div class="icon"><i class="fas fa-chevron-down"></i></div>
+                        </button>
+                        <div class="dropdown-data">
+                            <div class="dropdown-item">
+                                <i class="fas fa-check"></i>
+                                <p>Giám đốc</p>
+                            </div>
+                            <div class="dropdown-item item-selected">
+                                <i class="fas fa-check"></i>
+                                <p>Giám đốc</p>
+                            </div>
+                            <div class="dropdown-item">
+                                <i class="fas fa-check"></i>
+                                <p>Giám đốc</p>
+                            </div>
+                            <div class="dropdown-item">
+                                <i class="fas fa-check"></i>
+                                <p>Giám đốc</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <button class="dropdown-main">
+                            <p>Tất cả chức vụ</p>
+                            <div class="icon"><i class="fas fa-chevron-down"></i></div>
+                        </button>
+                        <div class="dropdown-data">
+                            <div class="dropdown-item">
+                                <i class="fas fa-check"></i>
+                                <p>Giám đốc</p>
+                            </div>
+                            <div class="dropdown-item item-selected">
+                                <i class="fas fa-check"></i>
+                                <p>Giám đốc</p>
+                            </div>
+                            <div class="dropdown-item">
+                                <i class="fas fa-check"></i>
+                                <p>Giám đốc</p>
+                            </div>
+                            <div class="dropdown-item">
+                                <i class="fas fa-check"></i>
+                                <p>Giám đốc</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="toolbar-right">
+                    <button class="button button-refresh">
+                        <i class="fas fa-sync-alt"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="grid">
+                <table class="tb-head" border="0">
+                    <thead>
+                        <tr>
+                            <th fieldName="EmployeeCode">Mã nhân viên</th>
+                            <th fieldName="FullName">Họ và tên</th>
+                            <th fieldName="DateOfBirth" formatType="ddmmyyyy">Ngày sinh</th>
+                            <th fieldName="GenderName">Giới tính</th>
+                            <th fieldName="PhoneNumber">Điện thoại</th>
+                            <th fieldName="Email">Email</th>
+                        </tr>
+                    </thead>
+                </table>
+                <table class="tb-body" border="0">
+                    <!--<colgroup>
+                        <col/>
+                        <col/>
+                        <col/>
+                        <col/>
+                        <col/>
+                        <col/>
+                        <col/>
+                        <col/>
+                        <col style="text-align:right;"/>
+                        <col/>
+                    </colgroup>-->
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+            <div class="content-paging">
+                <div class="paging-left">
+                    <p>Hiển thị 1-10/1000 khách hàng</p>
+                </div>
+                <div class="paging-center">
+                    <button class="btn-inline"><i class="fas fa-angle-double-left"></i></button>
+                    <button class="btn-inline"><i class="fas fa-angle-left"></i></button>
+                    <button class="circle">1</button>
+                    <button class="circle">2</button>
+                    <button class="circle">3</button>
+                    <button class="circle">4</button>
+                    <button class="btn-inline"><i class="fas fa-angle-right"></i></button>
+                    <button class="btn-inline"><i class="fas fa-angle-double-right"></i></button>
+                </div>
+                <div class="paging-right">
+                    <p>10 khách hàng/trang</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="dialog">
+        <div class="dialog-modal"></div>
+        <div class="employee-profile-dialog">
+            <div class="dialog-header">
+                <p>THÔNG TIN NHÂN VIÊN</p>
+                <button class="btn-exit"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="dialog-content">
+                <div class="dialog-content-left">
+                    <div class="avt-default"></div>
+                    <p>Ảnh avatar ở đây</p>
+                </div>
+                <div class="dialog-content-right">
+                    <div class="thongtinchung">
+                        <div class="title-info">
+                            <p>A. THÔNG TIN CHUNG</p>
+                            <div class="layout"></div>
+                        </div>
+                        <div class="my-row">
+                            <div class="small-info">
+                                <p>Mã nhân viên (<font color="red">*</font>)</p>
+                                <input type="text" value="NV000999" autofocus />
+                            </div>
+                            <div class="small-info">
+                                <p>Họ và tên(<font color="red">*</font>)</p>
+                                <input type="text" value="Nguyễn Văn Mạnh" />
+                            </div>
+                        </div>
+                        <div class="my-row">
+                            <div class="small-info">
+                                <p>Ngày sinh</p>
+                                <input type="date" value="1989-01-11" />
+                            </div>
+                            <div class="small-info">
+                                <p>Giới tính</p>
+                                <!--<div class="combobox">
+                                    <input type="text" placeholder="Nam" />
+                                    <button><i class="fas fa-chevron-down"></i></button>
+                                    <div class="combobox-data">
+                                        <div class="combobox-item">
+                                            <i class="fas fa-check"></i>
+                                            <p>Giám đốc</p>
+                                        </div>
+                                        <div class="combobox-item item-selected">
+                                            <i class="fas fa-check"></i>
+                                            <p>Giám đốc</p>
+                                        </div>
+                                        <div class="combobox-item">
+                                            <i class="fas fa-check"></i>
+                                            <p>Giám đốc</p>
+                                        </div>
+                                        <div class="combobox-item">
+                                            <i class="fas fa-check"></i>
+                                            <p>Giám đốc</p>
+                                        </div>
+                                    </div>
+                                </div>-->
+                                <div class="dropdown">
+                                    <button class="dropdown-main">
+                                        <p>Tất cả chức vụ</p>
+                                        <div class="icon"><i class="fas fa-chevron-down"></i></div>
+                                    </button>
+                                    <div class="dropdown-data">
+                                        <div class="dropdown-item">
+                                            <i class="fas fa-check"></i>
+                                            <p>Giám đốc</p>
+                                        </div>
+                                        <div class="dropdown-item item-selected">
+                                            <i class="fas fa-check"></i>
+                                            <p>Giám đốc</p>
+                                        </div>
+                                        <div class="dropdown-item">
+                                            <i class="fas fa-check"></i>
+                                            <p>Giám đốc</p>
+                                        </div>
+                                        <div class="dropdown-item">
+                                            <i class="fas fa-check"></i>
+                                            <p>Giám đốc</p>
+                                        </div>
+                                        <div class="dropdown-item">
+                                            <i class="fas fa-check"></i>
+                                            <p>Giám đốc</p>
+                                        </div>
+                                        <div class="dropdown-item">
+                                            <i class="fas fa-check"></i>
+                                            <p>Giám đốc</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="my-row">
+                            <div class="small-info">
+                                <p>Số CMND/Căn cước(<font color="red">*</font>)</p>
+                                <input type="text" value="124141243" />
+                            </div>
+                            <div class="small-info">
+                                <p>Ngày cấp</p>
+                                <input type="date" value="2011-04-11" />
+                            </div>
+                        </div>
+                        <div class="my-row">
+                            <div class="small-info">
+                                <p>Nơi cấp</p>
+                                <input type="text" value="Tỉnh Bắc Giang" />
+                            </div>
+                        </div>
+                        <div class="my-row">
+                            <div class="small-info">
+                                <p>Email(<font color="red">*</font>)</p>
+                                <input type="text" value="manhnv@gmail.com" />
+                            </div>
+                            <div class="small-info">
+                                <p>Số điện thoại(<font color="red">*</font>)</p>
+                                <input type="text" value="0987635421" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="thongtincongviec">
+                        <div class="title-info">
+                            <p>B. THÔNG TIN CÔNG VIỆC</p>
+                            <div class="layout"></div>
+                        </div>
+                        <div class="my-row">
+                            <div class="small-info">
+                                <p>Vị trí</p>
+                                <!--<div class="combobox">
+                                    <input type="text" placeholder="Giám đốc" />
+                                    <button><i class="fas fa-chevron-down"></i></button>
+                                    <div class="combobox-data">
+                                        <div class="combobox-item">
+                                            <i class="fas fa-check"></i>
+                                            <p>Giám đốc</p>
+                                        </div>
+                                        <div class="combobox-item item-selected">
+                                            <i class="fas fa-check"></i>
+                                            <p>Giám đốc</p>
+                                        </div>
+                                        <div class="combobox-item">
+                                            <i class="fas fa-check"></i>
+                                            <p>Giám đốc</p>
+                                        </div>
+                                        <div class="combobox-item">
+                                            <i class="fas fa-check"></i>
+                                            <p>Giám đốc</p>
+                                        </div>
+                                    </div>
+                                </div>-->
+                                <div class="dropdown">
+                                    <button class="dropdown-main">
+                                        <p>Tất cả chức vụ</p>
+                                        <div class="icon"><i class="fas fa-chevron-down"></i></div>
+                                    </button>
+                                    <div class="dropdown-data">
+                                        <div class="dropdown-item">
+                                            <i class="fas fa-check"></i>
+                                            <p>Giám đốc</p>
+                                        </div>
+                                        <div class="dropdown-item item-selected">
+                                            <i class="fas fa-check"></i>
+                                            <p>Giám đốc</p>
+                                        </div>
+                                        <div class="dropdown-item">
+                                            <i class="fas fa-check"></i>
+                                            <p>Giám đốc</p>
+                                        </div>
+                                        <div class="dropdown-item">
+                                            <i class="fas fa-check"></i>
+                                            <p>Giám đốc</p>
+                                        </div>
+                                        <div class="dropdown-item">
+                                            <i class="fas fa-check"></i>
+                                            <p>Giám đốc</p>
+                                        </div>
+                                        <div class="dropdown-item">
+                                            <i class="fas fa-check"></i>
+                                            <p>Giám đốc</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="small-info">
+                                <p>Phòng ban</p>
+                                <div class="combobox">
+                                    <input type="text" placeholder="Phòng quản trị" />
+                                    <button><i class="fas fa-chevron-down"></i></button>
+                                    <div class="combobox-data">
+                                        <div class="combobox-item">
+                                            <i class="fas fa-check"></i>
+                                            <p>Giám đốc</p>
+                                        </div>
+                                        <div class="combobox-item item-selected">
+                                            <i class="fas fa-check"></i>
+                                            <p>Giám đốc</p>
+                                        </div>
+                                        <div class="combobox-item">
+                                            <i class="fas fa-check"></i>
+                                            <p>Giám đốc</p>
+                                        </div>
+                                        <div class="combobox-item">
+                                            <i class="fas fa-check"></i>
+                                            <p>Giám đốc</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="dropdown">
+                                    <button class="dropdown-main">
+                                        <p>Tất cả chức vụ</p>
+                                        <div class="icon"><i class="fas fa-chevron-down"></i></div>
+                                    </button>
+                                    <div class="dropdown-data">
+                                        <div class="dropdown-item">
+                                            <i class="fas fa-check"></i>
+                                            <p>Giám đốc</p>
+                                        </div>
+                                        <div class="dropdown-item item-selected">
+                                            <i class="fas fa-check"></i>
+                                            <p>Giám đốc</p>
+                                        </div>
+                                        <div class="dropdown-item">
+                                            <i class="fas fa-check"></i>
+                                            <p>Giám đốc</p>
+                                        </div>
+                                        <div class="dropdown-item">
+                                            <i class="fas fa-check"></i>
+                                            <p>Giám đốc</p>
+                                        </div>
+                                        <div class="dropdown-item">
+                                            <i class="fas fa-check"></i>
+                                            <p>Giám đốc</p>
+                                        </div>
+                                        <div class="dropdown-item">
+                                            <i class="fas fa-check"></i>
+                                            <p>Giám đốc</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="my-row">
+                            <div class="small-info">
+                                <p>Mã số thuế cá nhân</p>
+                                <input type="text" value="3454643543" />
+                            </div>
+                            <div class="small-info">
+                                <p>Mức lương cơ bản</p>
+                                <input class="can-phai" type="text" value="30.000.000" />
+                            </div>
+                        </div>
+                        <div class="my-row">
+                            <div class="small-info">
+                                <p>Ngày gia nhập công ty</p>
+                                <input type="date" value="2015-05-12" />
+                            </div>
+                            <div class="small-info">
+                                <p>Tình trạng công việc</p>
+                                <!--<div class="combobox">
+                                    <input type="text" placeholder="Đang làm việc" />
+                                    <button><i class="fas fa-chevron-down"></i></button>
+                                    <div class="combobox-data">
+                                        <div class="combobox-item">
+                                            <i class="fas fa-check"></i>
+                                            <p>Giám đốc</p>
+                                        </div>
+                                        <div class="combobox-item item-selected">
+                                            <i class="fas fa-check"></i>
+                                            <p>Giám đốc</p>
+                                        </div>
+                                        <div class="combobox-item">
+                                            <i class="fas fa-check"></i>
+                                            <p>Giám đốc</p>
+                                        </div>
+                                        <div class="combobox-item">
+                                            <i class="fas fa-check"></i>
+                                            <p>Giám đốc</p>
+                                        </div>
+                                    </div>
+                                </div>-->
+                                <div class="dropdown">
+                                    <button class="dropdown-main">
+                                        <p>Tất cả chức vụ</p>
+                                        <div class="icon"><i class="fas fa-chevron-down"></i></div>
+                                    </button>
+                                    <div class="dropdown-data">
+                                        <div class="dropdown-item">
+                                            <i class="fas fa-check"></i>
+                                            <p>Giám đốc</p>
+                                        </div>
+                                        <div class="dropdown-item item-selected">
+                                            <i class="fas fa-check"></i>
+                                            <p>Giám đốc</p>
+                                        </div>
+                                        <div class="dropdown-item">
+                                            <i class="fas fa-check"></i>
+                                            <p>Giám đốc</p>
+                                        </div>
+                                        <div class="dropdown-item">
+                                            <i class="fas fa-check"></i>
+                                            <p>Giám đốc</p>
+                                        </div>
+                                        <div class="dropdown-item">
+                                            <i class="fas fa-check"></i>
+                                            <p>Giám đốc</p>
+                                        </div>
+                                        <div class="dropdown-item">
+                                            <i class="fas fa-check"></i>
+                                            <p>Giám đốc</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dialog-footer">
+                <button class="btn-cancel"><b>Hủy</b></button>
+                <button class="button button-icon btn-save">
+                    <i class="fas fa-save"></i>
+                    <p>Lưu</p>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../lib/jquery-3.6.0.min.js"></script>
+    <script src="../js/common/base.js"></script>
+    <script src="../js/common/common.js"></script>
+    <script src="../js/page/customer.js"></script>
+
+</body>
+</html>

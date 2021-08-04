@@ -1,0 +1,155 @@
+﻿.covid-page {
+    width: 100%;
+    height: calc(100% - 49px);
+    float: left;
+}
+
+.covid-header {
+    width: 100%;
+    height: 80px;
+    background-color: blanchedalmond;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #bbb;
+}
+
+    .covid-header h2 {
+        display: block;
+        margin: 0;
+        line-height: 80px;
+        margin-left: 24px;
+    }
+
+    .covid-header p {
+        display: block;
+        line-height: 80px;
+        width: auto;
+        margin: 0;
+        margin-right: 24px;
+    }
+
+.covid-body {
+    width: 100%;
+    height: calc(100% - 81px);
+    float: left;
+}
+
+    .covid-body .covid-total {
+        width: 100%;
+        height: 120px;
+        box-shadow: 1px 2px 3px 0px rgba(0, 0, 0, 0.26);
+        display: flex;
+        padding-right: 24px;
+        box-sizing: border-box;
+    }
+
+.title-total {
+    display: block;
+    margin: 0;
+    line-height: 120px;
+    margin-left: 24px;
+    width: 124px;
+}
+
+.covid-total .big-item {
+    height: 100%;
+    width: 250px;
+    margin-left: 150px;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 3px 0px 6px 0px rgba(0, 0, 0, 0.26);
+}
+
+    .covid-total .big-item.confirmed {
+        border-left: 4px solid #F1C04E;
+    }
+
+    .covid-total .big-item.deaths {
+        border-left: 4px solid #EB5757;
+    }
+
+    .covid-total .big-item.recovered {
+        border-left: 4px solid #01B075;
+    }
+
+
+    .covid-total .big-item .small-item {
+        width: 100%;
+        display: block;
+        line-height: 39px;
+        float: left;
+        height: 40px;
+        border-bottom: 1px solid #bbb;
+        margin: 0;
+        padding: 0;
+        padding-left: 10px;
+        box-sizing: border-box;
+    }
+
+        .covid-total .big-item .small-item:first-child {
+            text-align: center;
+        }
+
+    /*việt nam*/
+.covid-body .covid-vn {
+    float: left;
+    width: 250px;
+    height: calc( 100% - 121px );
+    box-shadow: 2px 0px 3px 0px rgba(0, 0, 0, 0.26);
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: column;
+}
+
+.title-vn {
+    display: block;
+    margin: 0;
+    line-height: 80px;
+    height: 80px;
+    text-align:center;
+    width: 100%;
+}
+
+
+.covid-vn .big-item {
+    height: 120px ;
+    width: 100%;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.26);
+    margin: 0;
+    margin-top: 70px;
+}
+
+    .covid-vn .big-item.confirmed {
+        border-top: 4px solid #F1C04E;
+        margin-top: 0px;
+    }
+
+    .covid-vn .big-item.deaths {
+        border-top: 4px solid #EB5757;
+    }
+
+    .covid-vn .big-item.recovered {
+        border-top: 4px solid #01B075;
+    }
+
+
+.covid-vn .big-item .small-item {
+    width: 100%;
+    display: block;
+    line-height: 39px;
+    float: left;
+    height: 40px;
+    border-bottom: 1px solid #bbb;
+    margin: 0;
+    padding: 0;
+    padding-left: 10px;
+    box-sizing: border-box;
+}
+
+
+    .covid-vn .big-item .small-item:first-child {
+        text-align: center;
+    }
+

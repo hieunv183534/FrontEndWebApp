@@ -1,0 +1,212 @@
+﻿.dialog{
+    margin:0;
+    padding:0;
+    width:100%;
+    height:100vh;
+    visibility:hidden;
+    position:relative;
+}
+
+.dialog-modal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: black;
+    opacity: 0.5;
+}
+
+.employee-profile-dialog {
+    opacity: 1;
+    position: absolute;
+    top: 24px;
+    left: 50%;
+    margin-left: -410px;
+    width: 820px;
+    height: calc(100vh - 48px);
+    border-radius: 5px;
+    background-color: #ffffff;
+    overflow: hidden;
+}
+
+    .employee-profile-dialog .dialog-header {
+        height: 72px;
+        width: 100%;
+        float: left;
+        position: relative;
+    }
+
+        .employee-profile-dialog .dialog-header p {
+            font-size: 24px;
+            font-weight: bolder;
+            display: block;
+            line-height: 72px;
+            padding-left: 24px;
+            margin: 0;
+        }
+
+        .employee-profile-dialog .dialog-header button.btn-exit {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 30px;
+            height: 27px;
+            outline: none;
+            border: navajowhite;
+            background-color: #ffffff;
+        }
+
+
+        .employee-profile-dialog .dialog-header button i {
+            font-size: 21px;
+        }
+
+    .employee-profile-dialog .dialog-content {
+        width: 100%;
+        height: calc(100% - 135px);
+        float: left;
+    }
+
+        .employee-profile-dialog .dialog-content .dialog-content-left {
+            width: 200px;
+            height: 100%;
+            float: left;
+            display: flex;
+            flex-direction: column;
+        }
+
+            .employee-profile-dialog .dialog-content .dialog-content-left .avt-default {
+                width: 167px;
+                height: 167px;
+                background-image: url('../../content/img/default-avatar.jpg');
+                background-repeat: no-repeat;
+                background-size: contain;
+                border-radius: 50%;
+                border: 1px solid #BDBEC0;
+                margin: 10px auto;
+                display: block;
+            }
+
+            .employee-profile-dialog .dialog-content .dialog-content-left p {
+                display: block;
+                margin: 0 auto;
+            }
+
+        .employee-profile-dialog .dialog-content .dialog-content-right {
+            width: calc(100% - 200px);
+            height: 100%;
+            float: left;
+            overflow-y: scroll;
+            /*-webkit-overflow-scrolling: touch;*/
+        }
+
+            .employee-profile-dialog .dialog-content .dialog-content-right .thongtinchung {
+                width: 100%;
+                height: 470px;
+                float: left;
+            }
+
+            .employee-profile-dialog .dialog-content .dialog-content-right .thongtincongviec {
+                width: 100%;
+                height: calc( 100% - 450px );
+                float: left;
+            }
+
+            .employee-profile-dialog .dialog-content .dialog-content-right .title-info {
+                width: 100%;
+                height: 30px;
+                position: relative;
+                margin-bottom: 24px;
+            }
+
+                .employee-profile-dialog .dialog-content .dialog-content-right .title-info p {
+                    font-weight: bold;
+                    font-size: 14px;
+                }
+
+                .employee-profile-dialog .dialog-content .dialog-content-right .title-info .layout {
+                    width: 77px;
+                    height: 5px;
+                    background-color: #019160;
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                }
+
+
+            .employee-profile-dialog .dialog-content .dialog-content-right .my-row {
+                width: calc(100% - 24px);
+                height: 57px;
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 24px;
+            }
+
+            .employee-profile-dialog .dialog-content .dialog-content-right .small-info {
+                width: 290px;
+                height: 100%;
+                background-color: #ffffff;
+                float: left;
+            }
+
+                .employee-profile-dialog .dialog-content .dialog-content-right .small-info p {
+                    color: black;
+                    display: block;
+                    margin: 0;
+                    margin-bottom: 4px;
+                }
+
+                .employee-profile-dialog .dialog-content .dialog-content-right .small-info input {
+                    width: 290px;
+                }
+
+                /*.employee-profile-dialog .dialog-content .dialog-content-right .small-info .combobox {
+                    width: 290px;
+                }*/
+
+                .employee-profile-dialog .dialog-content .dialog-content-right .small-info .dropdown {
+                    width: 290px;
+                }
+
+                    .employee-profile-dialog .dialog-content .dialog-content-right .small-info .dropdown p {
+                        margin: 0;
+                        line-height: 40px;
+                        font-size: 13px;
+                        margin-left: 10px;
+                        font-family: 'GoogleSans-Regular';
+                    }
+
+    /*.employee-profile-dialog .dialog-content .dialog-content-right .small-info input.calender {
+                        background-image: url('../../content/img/calender.jpg');
+                        background-repeat: no-repeat;
+                        background-size: 16px;
+                        background-position: 246px center;
+                    }
+
+                    .employee-profile-dialog .dialog-content .dialog-content-right .small-info input.down1 {
+                        background-image: url('../../content/img/down1.jpg');
+                        background-repeat: no-repeat;
+                        background-size: 16px;
+                        background-position: 264px center;
+                    }*/
+    .employee-profile-dialog .dialog-footer {
+        height: 60px;
+        width: 100%;
+        float: left;
+        background-color: #E9EBEE;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+        .employee-profile-dialog .dialog-footer button {
+            width: 80px;
+            height: 40px;
+            margin-right: 25px;
+        }
+
+        .employee-profile-dialog .dialog-footer .btn-cancel {
+            border: none;
+            background-color: #E9EBEE;
+        }

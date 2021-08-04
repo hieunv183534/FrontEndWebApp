@@ -1,0 +1,299 @@
+.menu {
+    position: relative;
+    width: 225px;
+    height: 100vh;
+    border-right: solid 1px #e4e4e4;
+    float: left;
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+    .menu .menu-header {
+        width: 100%;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        transition: 0.5s;
+    }
+
+        .menu .menu-header .toggle {
+            background-color: #fff;
+            height: 24px;
+            width: 24px;
+            margin: 12px 0px;
+            margin-right: 10px;
+            margin-left: 16px;
+            background-image: url('../../content/icon/toggle.png');
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+
+        .menu .menu-header .logo {
+            background-color: #fff;
+            height: 24px;
+            width: 100px;
+            background-image: url('../../content/img/cukcuk-logo.png');
+            background-repeat: no-repeat;
+            background-size: contain;
+            transition: 0.5s;
+        }
+
+    .menu .menu-body {
+        width: 100%;
+        transition: 0.5s;
+    }
+
+        .menu .menu-body .menu-item {
+            width: 100%;
+            height: 44px;
+            display: flex;
+            cursor: pointer;
+            text-decoration: none;
+            transition: 0s;
+        }
+
+            .menu .menu-body .menu-item.menu-item-selected {
+                background-color: #019160;
+            }
+
+            .menu .menu-body .menu-item .menu-icon {
+                width: 20px;
+                height: 20px;
+                background-color: #fff;
+                margin: auto 0;
+                margin-left: 16px;
+                margin-right: 10px;
+                background-repeat: no-repeat;
+                background-size: contain;
+                transition: 0s;
+            }
+
+                .menu .menu-body .menu-item .menu-icon.dashboard-icon {
+                    background-image: url('../../content/icon/dashboard.png');
+                }
+
+                .menu .menu-body .menu-item .menu-icon.document-online-icon {
+                    background-image: url('../../content/icon/document-online.png');
+                }
+
+                .menu .menu-body .menu-item .menu-icon.dic-employee-icon {
+                    background-image: url('../../content/icon/dic-employee.png');
+                }
+
+                .menu .menu-body .menu-item .menu-icon.report-icon {
+                    background-image: url('../../content/icon/report.png');
+                }
+
+                .menu .menu-body .menu-item .menu-icon.setting-icon {
+                    background-image: url('../../content/icon/setting.png');
+                }
+
+            .menu .menu-body .menu-item:hover {
+                background-color: #e5e5e5;
+                color: #000000;
+                transition: 0s;
+            }
+
+                .menu .menu-body .menu-item:hover .menu-icon {
+                    background-color: #e5e5e5;
+                    transition: 0s;
+                }
+
+            .menu .menu-body .menu-item p {
+                font-size: 13px;
+                color: #515252;
+                transition: 0.5s;
+                overflow-x: hidden;
+                white-space: nowrap;
+            }
+
+    /*.menu .menu-out {
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        background-color: aqua;
+        transform: rotate(45deg);
+        right: -13px;
+        top: 60px;
+    }
+
+    .menu .menu-in {
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        background-color: greenyellow;
+        transform: rotate(45deg);
+        left: -13px;
+        top: 60px;
+    }*/
+
+.content {
+    width: calc(100% - 227px);
+    height: 100vh;
+    float: left;
+    transition: 0.5s;
+}
+
+
+    .content .content-header {
+        width: 100%;
+        height: 48px;
+        float: left;
+        border-bottom: solid 1px #e4e4e4;
+        display: flex;
+        justify-content: space-between;
+    }
+
+        .content .content-header .header-left {
+            height: 100%;
+            width: 300px;
+            display:flex;
+            align-items:center;
+        }
+
+
+            .content .content-header .header-right {
+                height: 100%;
+                width: 300px;
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+            }
+
+            .content .content-header .header-right .avatar {
+                width: 33px;
+                height: 33px;
+                background-image: url('../../content/img/avatar-default.png');
+                background-repeat: no-repeat;
+                background-size: contain;
+                margin-right: 16px;
+            }
+
+            .content .content-header .header-right p {
+                display: block;
+                font-size: 13px;
+                line-height: 48px;
+                margin-right: 16px;
+            }
+
+            .content .content-header .header-right .option-icon {
+                width: 20px;
+                height: 20px;
+                background-image: url('../../content/icon/option.png');
+                background-repeat: no-repeat;
+                background-size: contain;
+                margin-right: 16px;
+            }
+
+    .content .content-body {
+        width: 100%;
+        height: calc(100% - 49px);
+        float: left;
+        padding: 24px;
+        box-sizing: border-box;
+    }
+
+        .content .content-body .content-title {
+            width: 100%;
+            height: 40px;
+            float: left;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+            .content .content-body .content-title > b {
+                line-height: 40px;
+                font-size: 20px;
+            }
+
+            .content .content-body .content-title > span {
+                width: auto;
+                display: flex;
+                justify-content: flex-end;
+            }
+
+                .content .content-body .content-title > span #btnDelete {
+                    margin-right: 16px;
+                    visibility: hidden;
+                }
+
+        .content .content-body .content-toolbar {
+            width: 100%;
+            height: 40px;
+            float: left;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+            .content .content-body .content-toolbar .toolbar-left {
+                height: 100%;
+                width: 850px;
+                display: flex;
+            }
+
+                /*.content .content-body .content-toolbar .toolbar-left .combobox{
+                    margin-left:16px;
+                }*/
+
+                .content .content-body .content-toolbar .toolbar-left .dropdown {
+                    margin-left: 16px;
+                }
+
+            .content .content-body .content-toolbar .toolbar-right {
+                height: 100%;
+                width: 250px;
+                display: flex;
+                justify-content: flex-end;
+            }
+
+        .content .content-body .grid {
+            width: 100%;
+            height: calc(100% - 156px);
+            float: left;
+        }
+
+        .content .content-body .content-paging {
+            width: 100%;
+            height: 56px;
+            float: left;
+            position: relative;
+        }
+
+
+            .content .content-body .content-paging .paging-left {
+                height: 100%;
+                width: 300px;
+                position: absolute;
+                left: 0;
+            }
+
+                .content .content-body .content-paging .paging-left > p {
+                    line-height: 56px;
+                }
+
+            .content .content-body .content-paging .paging-center {
+                width: 400px;
+                height: 100%;
+                position: absolute;
+                left: 50%;
+                margin-left: -200px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .content .content-body .content-paging .paging-right {
+                height: 100%;
+                width: 300px;
+                position: absolute;
+                right: 0;
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+            }
+
+                .content .content-body .content-paging .paging-right > p {
+                    line-height: 56px;
+                }

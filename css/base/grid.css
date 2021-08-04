@@ -1,0 +1,150 @@
+﻿
+::-webkit-scrollbar {
+    height: 8px;
+    width: 8px;
+    background: lightgray;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+    background: gray;
+    border-radius: 4px;
+}
+
+    /*.grid {
+    border: 3px black solid;
+}*/
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        height: 100%;
+        overflow-x: scroll;
+        display: block;
+    }
+
+thead {
+    border-bottom: solid 1px #E4E4E4;
+}
+
+thead, tbody {
+    display: block;
+}
+
+tbody {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: calc( 100% - 55px );
+}
+
+td, th {
+    height: 48px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+th {
+    height: 50px;
+}
+
+td{
+    height:48px;
+}
+
+
+tbody tr {
+    border-bottom: 1px solid #E4E4E4;
+}
+
+
+    tbody tr:nth-child(2n+1) {
+        background-color: #FFF3EB;
+    }
+
+    tbody tr:hover {
+        background-color: #E9EBEE !important;
+    }
+
+    tbody tr td input:checked{
+        background-color:red;
+    }
+
+/*check*/
+td:nth-child(1),
+th:nth-child(1) {
+    min-width: 50px;
+    max-width: 50px;
+}
+
+/*mã nhân viên*/
+td:nth-child(2),
+th:nth-child(2) {
+    min-width: 120px;
+    max-width: 120px;
+}
+
+/*họ tên*/
+td:nth-child(3),
+th:nth-child(3) {
+    min-width: 160px;
+    max-width: 160px;
+}
+
+/*ngày sinh*/
+td:nth-child(4),
+th:nth-child(4) {
+    min-width: 120px;
+    max-width: 120px;
+    text-align:center;
+}
+
+/*giới tính*/
+td:nth-child(5),
+th:nth-child(5) {
+    min-width: 100px;
+    max-width: 100px;
+}
+
+/*điện thoại*/
+td:nth-child(6),
+th:nth-child(6) {
+    min-width: 160px;
+    max-width: 160px;
+}
+
+/*email*/
+td:nth-child(7),
+th:nth-child(7) {
+    min-width: 250px;
+    max-width: 250px;
+}
+
+/*phòng ban*/
+td:nth-child(8),
+th:nth-child(8) {
+    min-width: 200px;
+    max-width: 200px;
+}
+
+/*chức vụ*/
+td:nth-child(9),
+th:nth-child(9) {
+    min-width: 150px;
+    max-width: 150px;
+}
+
+/*mức lương cơ bản*/
+td:nth-child(10),
+th:nth-child(10) {
+    min-width: 150px;
+    max-width: 150px;
+    text-align: right;
+}
+
+/*tình trạng công việc*/
+td:nth-child(11),
+th:nth-child(11) {
+    min-width: 170px;
+    max-width: 170px;
+}

@@ -1,0 +1,62 @@
+input {
+    width: 325px;
+    height: 40px;
+    padding: 10px 16px;
+    border-radius: 4px;
+    outline: none;
+    border: solid 1px #bbbbbb;
+    box-sizing: border-box;
+    font-family: 'GoogleSans-Regular';
+    font-size: 13px;
+}
+
+    input:focus {
+        border-color: #019160;
+    }
+
+    input.input-search {
+        font-family: GoogleSans-Italic;
+    }
+
+    select.chondi {
+        width: 325px;
+        height: 40px;
+        padding: 10px 16px;
+        border-radius: 4px;
+        outline: none;
+        border: solid 1px #bbbbbb;
+        box-sizing: border-box;
+    }
+
+    input.input-icon {
+        background-image: url('../../content/icon/search.png');
+        background-repeat: no-repeat;
+        background-position: 16px center;
+        background-size: 16px;
+        padding-left: 40px;
+    }
+
+input#inputSalary {
+    background-image: url(../../content/img/vnd.jpg);
+    background-repeat: no-repeat;
+    background-position-x: 243px;
+    background-position-y: 10px;
+    background-size: 38px;
+    padding-right: 50px;
+}
+
+
+
+/*checkbox*/
+
+/*input.checkbox{
+    width:40px;
+}*/
+
+/*input[title]:hover::after {
+    content: attr(title);
+    position: absolute;
+    top: -100%;
+    left: 0;
+    background-color:aqua;
+}*/
