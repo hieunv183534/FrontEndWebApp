@@ -1,0 +1,437 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<link href="../lib/bootstrap-4.6.0-dist/css/bootstrap.css" rel="stylesheet" />-->
+    <link href="../content/font/fontawesome-5.15.1/css/all.css" rel="stylesheet" />
+    <link href="../css/main.css" rel="stylesheet" />
+    <link href="../css/base/dialog-item.css" rel="stylesheet" />
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="menu">
+        <div class="menu-header">
+            <button id="btnToggle" class="toggle btn-inline"></button>
+            <div class="logo"></div>
+        </div>
+        <div class="menu-body">
+            <a class="menu-item">
+                <div class="menu-icon dashboard-icon"></div>
+                <p>Tổng quan</p>
+            </a>
+            <a class="menu-item" href="customer.html">
+                <div class="menu-icon report-icon"></div>
+                <p>Danh mục khách hàng</p>
+            </a>
+            <a class="menu-item" href="employee.html">
+                <div class="menu-icon dic-employee-icon"></div>
+                <p>Danh mục nhân viên</p>
+            </a>
+            <a class="menu-item" href="item.html">
+                <div class="menu-icon items"></div>
+                <p>Danh mục sản phẩm</p>
+            </a>
+            <a class="menu-item" href="covid19.html">
+                <div class="menu-icon document-online-icon"></div>
+                <p>Thông tin covid19</p>
+            </a>
+        </div>
+        <!--<div class="menu-out"></div>
+        <div class="menu-in"></div>-->
+    </div>
+    <div class="content">
+        <div class="content-header">
+            <div class="header-left">
+                <div class="dropdown" style="border:none;" value="Đông">
+                    <button class="dropdown-main">
+                        <p>Nhà hàng biển Đông</p>
+                        <div class="icon"><i class="fas fa-chevron-down"></i></div>
+                    </button>
+                    <div class="dropdown-data">
+                        <div class="dropdown-item item-selected" valueid="Đông" valuename="Nhà hàng biển Đông">
+                            <i class="fas fa-check"></i>
+                            <p>Nhà hàng biển Đông</p>
+                        </div>
+                        <div class="dropdown-item" valueid="Tây" valuename="Nhà hàng biển Tây">
+                            <i class="fas fa-check"></i>
+                            <p>Nhà hàng biển Tây</p>
+                        </div>
+                        <div class="dropdown-item" valueid="Nam" valuename="Nhà hàng biển Nam">
+                            <i class="fas fa-check"></i>
+                            <p>Nhà hàng biển Nam</p>
+                        </div>
+                        <div class="dropdown-item" valueid="Bắc" valuename="Nhà hàng biển Bắc">
+                            <i class="fas fa-check"></i>
+                            <p>Nhà hàng biển Bắc</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="avatar"></div>
+                <p>Nguyễn Văn Hiếu</p>
+                <div class="option-icon"></div>
+            </div>
+        </div>
+        <div class="content-body">
+            <div class="content-title">
+                <b>Danh sách mặt hàng</b>
+                <span>
+                    <button id="btnAdd" class="button button-icon">
+                        <i class="fas fa-user-plus"></i>
+                        <p>Thêm mặt hàng</p>
+                    </button>
+                </span>
+            </div>
+            <div class="content-toolbar">
+                <div class="toolbar-left">
+                    <input class="input-search input-icon" type="text" placeholder="Tìm kiếm theo tên sản phẩm" />
+                </div>
+                <div class="toolbar-right">
+                    <button id="btnRefresh" class="button button-refresh">
+                        <i class="fas fa-sync-alt"></i>
+                    </button>
+                </div>
+            </div>
+            <!--grid start here-->
+            <div class="grid-items">
+                <div class="item-item">
+                    <div class="item-img"></div>
+                    <span class="item-name">
+                        <p>Bún bò Huế</p>
+                        <p>30.000 VND</p>
+                    </span>
+                    <div class="item-btn">
+                        <button class="button button-icon btn-edit">
+                            <i class="fas fa-edit"></i>
+                            <p>Chỉnh sửa</p>
+                        </button>
+                        <button class="button button-icon">
+                            <i class="fas fa-trash-alt"></i>
+                            <p>Xóa</p>
+                        </button>
+                    </div>
+                </div>
+                <div class="item-item">
+                    <div class="item-img"></div>
+                    <span class="item-name">
+                        <p>Bún bò Huế</p>
+                        <p>30.000 VND</p>
+                    </span>
+                    <div class="item-btn">
+                        <button class="button button-icon btn-edit">
+                            <i class="fas fa-edit"></i>
+                            <p>Chỉnh sửa</p>
+                        </button>
+                        <button class="button button-icon">
+                            <i class="fas fa-trash-alt"></i>
+                            <p>Xóa</p>
+                        </button>
+                    </div>
+                </div>
+                <div class="item-item">
+                    <div class="item-img"></div>
+                    <span class="item-name">
+                        <p>Bún bò Huế</p>
+                        <p>30.000 VND</p>
+                    </span>
+                    <div class="item-btn">
+                        <button class="button button-icon btn-edit">
+                            <i class="fas fa-edit"></i>
+                            <p>Chỉnh sửa</p>
+                        </button>
+                        <button class="button button-icon">
+                            <i class="fas fa-trash-alt"></i>
+                            <p>Xóa</p>
+                        </button>
+                    </div>
+                </div>
+                <div class="item-item">
+                    <div class="item-img"></div>
+                    <span class="item-name">
+                        <p>Bún bò Huế</p>
+                        <p>30.000 VND</p>
+                    </span>
+                    <div class="item-btn">
+                        <button class="button button-icon btn-edit">
+                            <i class="fas fa-edit"></i>
+                            <p>Chỉnh sửa</p>
+                        </button>
+                        <button class="button button-icon">
+                            <i class="fas fa-trash-alt"></i>
+                            <p>Xóa</p>
+                        </button>
+                    </div>
+                </div>
+                <div class="item-item">
+                    <div class="item-img"></div>
+                    <span class="item-name">
+                        <p>Bún bò Huế</p>
+                        <p>30.000 VND</p>
+                    </span>
+                    <div class="item-btn">
+                        <button class="button button-icon btn-edit">
+                            <i class="fas fa-edit"></i>
+                            <p>Chỉnh sửa</p>
+                        </button>
+                        <button class="button button-icon">
+                            <i class="fas fa-trash-alt"></i>
+                            <p>Xóa</p>
+                        </button>
+                    </div>
+                </div>
+                <div class="item-item">
+                    <div class="item-img"></div>
+                    <span class="item-name">
+                        <p>Bún bò Huế</p>
+                        <p>30.000 VND</p>
+                    </span>
+                    <div class="item-btn">
+                        <button class="button button-icon btn-edit">
+                            <i class="fas fa-edit"></i>
+                            <p>Chỉnh sửa</p>
+                        </button>
+                        <button class="button button-icon">
+                            <i class="fas fa-trash-alt"></i>
+                            <p>Xóa</p>
+                        </button>
+                    </div>
+                </div>
+                <div class="item-item">
+                    <div class="item-img"></div>
+                    <span class="item-name">
+                        <p>Bún bò Huế</p>
+                        <p>30.000 VND</p>
+                    </span>
+                    <div class="item-btn">
+                        <button class="button button-icon btn-edit">
+                            <i class="fas fa-edit"></i>
+                            <p>Chỉnh sửa</p>
+                        </button>
+                        <button class="button button-icon">
+                            <i class="fas fa-trash-alt"></i>
+                            <p>Xóa</p>
+                        </button>
+                    </div>
+                </div>
+                <div class="item-item">
+                    <div class="item-img"></div>
+                    <span class="item-name">
+                        <p>Bún bò Huế</p>
+                        <p>30.000 VND</p>
+                    </span>
+                    <div class="item-btn">
+                        <button class="button button-icon btn-edit">
+                            <i class="fas fa-edit"></i>
+                            <p>Chỉnh sửa</p>
+                        </button>
+                        <button class="button button-icon">
+                            <i class="fas fa-trash-alt"></i>
+                            <p>Xóa</p>
+                        </button>
+                    </div>
+                </div>
+                <div class="item-item">
+                    <div class="item-img"></div>
+                    <span class="item-name">
+                        <p>Bún bò Huế</p>
+                        <p>30.000 VND</p>
+                    </span>
+                    <div class="item-btn">
+                        <button class="button button-icon btn-edit">
+                            <i class="fas fa-edit"></i>
+                            <p>Chỉnh sửa</p>
+                        </button>
+                        <button class="button button-icon">
+                            <i class="fas fa-trash-alt"></i>
+                            <p>Xóa</p>
+                        </button>
+                    </div>
+                </div>
+                <div class="item-item">
+                    <div class="item-img"></div>
+                    <span class="item-name">
+                        <p>Bún bò Huế</p>
+                        <p>30.000 VND</p>
+                    </span>
+                    <div class="item-btn">
+                        <button class="button button-icon btn-edit">
+                            <i class="fas fa-edit"></i>
+                            <p>Chỉnh sửa</p>
+                        </button>
+                        <button class="button button-icon">
+                            <i class="fas fa-trash-alt"></i>
+                            <p>Xóa</p>
+                        </button>
+                    </div>
+                </div>
+                <div class="item-item">
+                    <div class="item-img"></div>
+                    <span class="item-name">
+                        <p>Bún bò Huế</p>
+                        <p>30.000 VND</p>
+                    </span>
+                    <div class="item-btn">
+                        <button class="button button-icon btn-edit">
+                            <i class="fas fa-edit"></i>
+                            <p>Chỉnh sửa</p>
+                        </button>
+                        <button class="button button-icon">
+                            <i class="fas fa-trash-alt"></i>
+                            <p>Xóa</p>
+                        </button>
+                    </div>
+                </div>
+                <div class="item-item">
+                    <div class="item-img"></div>
+                    <span class="item-name">
+                        <p>Bún bò Huế</p>
+                        <p>30.000 VND</p>
+                    </span>
+                    <div class="item-btn">
+                        <button class="button button-icon btn-edit">
+                            <i class="fas fa-edit"></i>
+                            <p>Chỉnh sửa</p>
+                        </button>
+                        <button class="button button-icon">
+                            <i class="fas fa-trash-alt"></i>
+                            <p>Xóa</p>
+                        </button>
+                    </div>
+                </div>
+                <div class="item-item">
+                    <div class="item-img"></div>
+                    <span class="item-name">
+                        <p>Bún bò Huế</p>
+                        <p>30.000 VND</p>
+                    </span>
+                    <div class="item-btn">
+                        <button class="button button-icon btn-edit">
+                            <i class="fas fa-edit"></i>
+                            <p>Chỉnh sửa</p>
+                        </button>
+                        <button class="button button-icon">
+                            <i class="fas fa-trash-alt"></i>
+                            <p>Xóa</p>
+                        </button>
+                    </div>
+                </div>
+                <div class="item-item">
+                    <div class="item-img"></div>
+                    <span class="item-name">
+                        <p>Bún bò Huế</p>
+                        <p>30.000 VND</p>
+                    </span>
+                    <div class="item-btn">
+                        <button class="button button-icon btn-edit">
+                            <i class="fas fa-edit"></i>
+                            <p>Chỉnh sửa</p>
+                        </button>
+                        <button class="button button-icon">
+                            <i class="fas fa-trash-alt"></i>
+                            <p>Xóa</p>
+                        </button>
+                    </div>
+                </div>
+                <div class="item-item">
+                    <div class="item-img"></div>
+                    <span class="item-name">
+                        <p>Bún bò Huế</p>
+                        <p>30.000 VND</p>
+                    </span>
+                    <div class="item-btn">
+                        <button class="button button-icon btn-edit">
+                            <i class="fas fa-edit"></i>
+                            <p>Chỉnh sửa</p>
+                        </button>
+                        <button class="button button-icon">
+                            <i class="fas fa-trash-alt"></i>
+                            <p>Xóa</p>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!--grid end here-->
+        </div>
+    </div>
+
+
+    <div class="dialog-item">
+        <div class="dialog-modal-item"></div>
+        <div class="item-profile-dialog">
+            <div class="dialog-header">
+                <p>THÔNG TIN SẢN PHẨM</p>
+                <button id="btnExit" class="btn-exit"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="dialog-content">
+                <div class="dialog-content-img"></div>
+                <div class="dialog-content-content">
+                    <div class="my-row">
+                        <div class="small-info">
+                            <p>Tên mặt hàng</p>
+                            <input id="inputItemName" class="autofocus" type="text" value="" />
+                        </div>
+                        <div class="small-info">
+                            <p>Giá cả</p>
+                            <input id="inputItemPrice" type="text" value="" />
+                        </div>
+                    </div>
+                    <p>Thông tin chi tiết</p>
+                    <textarea rows="12  " cols="102"></textarea>
+                </div>
+            </div>
+
+            <div class="dialog-footer">
+                <button id="btnCancel" class="btn-cancel"><b>Hủy</b></button>
+                <button id="btnSave" class="button button-icon btn-save">
+                    <i class="fas fa-save"></i>
+                    <p>Lưu</p>
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="messenger-wrapper">
+        <div class="toast-messenger" scale=0>
+            <i class="fas"></i>
+            <p>Nội dung đi kèm tiêu đề</p>
+            <button> <i class="fas fa-times"></i></button>
+        </div>
+    </div>
+
+
+    <div class="popup">
+        <div class="popup-header">
+            <p>Đóng Form thông tin chung</p>
+            <button class="btn-exit">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="popup-content">
+            <div class="popup-content-left">
+                <i class="fas fa-exclamation-triangle"></i>
+            </div>
+            <div class="popup-content-right">
+                <p>Bạn có chắc muốn đóng form nhập "Thông tin chung của thủ tục 603" hay không?</p>
+            </div>
+        </div>
+        <div class="popup-footer">
+            <button class="button btn-y">NO</button>
+            <button class="button btn-x">YES</button>
+            <button class="button btn-z">YES</button>
+        </div>
+    </div>
+
+    <script src="../lib/jquery-3.6.0.min.js"></script>
+    <script src="../js/common/common.js"></script>
+    <script src="../js/common/dropdown.js"></script>
+    <script src="../js/common/toast-messenger.js"></script>
+    <script src="../js/common/popup.js"></script>
+    <script src="../js/page/item.js"></script>
+</body>
+</html>

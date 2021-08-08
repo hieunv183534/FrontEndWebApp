@@ -1,16 +1,16 @@
-﻿myEmployee = '';
+﻿myCustomer = '';
 
 $(document).ready(function () {
-    myEmployee = new EmployeeJS();
+    myCustomer = new CustomerJS();
 })
 
 
 
 
-class EmployeeJS {
-    checkedEmployees = [];
+class CustomerJS {
+    checkedCustomers = [];
     flagAdd = 1;
-    myEmployeeId = '';
+    myCustomerId = '';
 
     constructor() {
         this.loadData();
@@ -26,19 +26,15 @@ class EmployeeJS {
         var seft = this;
         $('.grid table tbody').empty();
         try {
-            this.dataUrl = "http://localhost:59749/api/Employees";
+            this.dataUrl = "http://localhost:59749/api/Customers";
+
             //Lấy thông tin tương ứng với các cột để map vào
             $.ajax({
                 url: this.dataUrl,
-                type: 'GET',
-                success: (res) => {
-                    console.log(res);
-                }
+                method: 'GET'
             }).done(function (res) {
-                console.log(res);
                 seft.bindingData(res);
             }).fail(function (res) {
-                console.log(res);
             });
         } catch (e) {
             console.log(e);
@@ -60,23 +56,9 @@ class EmployeeJS {
                 var fieldName = $(th).attr('fieldName');
                 if (fieldName == 'check') {
                     var value = $(`<input type="checkbox" style="width:46px; height:24px;"/>`);
-                } else if (fieldName == 'EmployeeId') {
-                    var value = "NV-" + obj[fieldName];
-                } else if (fieldName == 'Gender') {
-                    switch (obj[fieldName]) {
-                        case 1:
-                            var value = "Nam";
-                            break;
-                        case 2:
-                            var value = "Nữ";
-                            break;
-                        case 3:
-                            var value = "Không xác định";
-                            break;
-                        default:
-                            var value = "";
-                    }
-                }else {
+                } else if (fieldName == 'CustomerId') {
+                    var value = "KH-" + obj[fieldName];
+                } else {
                     var value = obj[fieldName];
                 }
                 var formatType = $(th).attr('formatType');
@@ -94,7 +76,7 @@ class EmployeeJS {
                 $(tr).append(td);
             })
             tr.attr('bgindex', index);
-            tr.attr('idobj', obj.EmployeeId);
+            tr.attr('idobj', obj.CustomerId);
 
             $('.grid table tbody').append(tr);
         });
@@ -149,7 +131,7 @@ class EmployeeJS {
         });
 
         //8.Validate dữ liệu
-        // Các trường bắt buộc nhập:Mã nhân viên, họ và tên, cmnd, số điện thoại, email
+        // Các trường bắt buộc nhập:Mã khách hàng, họ và tên
         $('input[required]').blur(function () {
             seft.requiredNote(seft, this);
         });
@@ -179,7 +161,18 @@ class EmployeeJS {
             $('.popup').css('display', 'none');
         })
 
+        //14 khi click vào btn exit, btn cancel trên dialog buy
+        $('.dialog-customer-buy .dialog-header button.btn-exit').click(() => {
+            $('.dialog-buy').css('visibility', 'hidden');
+        })
+        $('.dialog-customer-buy .dialog-footer .btn-cancel').click(() => {
+            $('.dialog-buy').css('visibility', 'hidden');
+        })
 
+        //15 khi click btn buy trên dialog
+        $('#btnBuy').click(() => {
+            $('.dialog-buy').css('visibility', 'visible');
+        })
     }
 
     /**
@@ -187,12 +180,13 @@ class EmployeeJS {
      * Author hieunv 26/07/2021
      * */
     loadDropdown() {
-       
-        //1.Dropdown vị trí form
-        this.loadDropdownData("Position", 0);
+        //1.Dropdown loại khách hàng form
+        this.loadDropdownData("CustomerType", 0)
+  
 
-        //2.Dropdown vị trí filter
-        this.loadDropdownData("Position", 1);
+        //2.Dropdown loại khách hàng filter
+        this.loadDropdownData("CustomerType", 1);
+ 
     }
 
     /**
@@ -201,7 +195,7 @@ class EmployeeJS {
     * @param {any} fieldName
      */
     loadDropdownData(fieldName, isFilter) {
-        var myUrl = "http://localhost:59749/api/Positions";
+        var myUrl = "http://localhost:59749/api/CustomerTypes";
         if (isFilter == 1) fieldName += '1';
         $.ajax({
             url: myUrl,
@@ -210,7 +204,7 @@ class EmployeeJS {
             $(`#input${fieldName}Name .dropdown-data`).empty();
             $(`#input${fieldName}Name .dropdown-main p`).empty();
             if (isFilter == 1) {
-                var name = "Tất cả vị trí";
+                var name = "Tất cả loại khách hàng";
                 $(`#input${fieldName}Name`).attr("value", '');
                 let dropdownItemHTML = $(`<div valueid="" valuename="${name}" class="dropdown-item item-selected">
                                             <i class="fas fa-check"></i>
@@ -227,13 +221,11 @@ class EmployeeJS {
                 var id = '';
                 var name = '';
                 if (isFilter == 1) {
-                    name = item[`PositionName`];
-                    id = item[`PositionId`];
-
+                    name =  item[`CustomerTypeName`];
+                    id = item[`CustomerTypeId`];
                 } else {
                     name = item[`${fieldName}Name`];
                     id = item[`${fieldName}Id`];
-                    console.log(name);
                     console.log(id);
                 }
                 let dropdownItemHTML = $(`<div valueid="${id}" valuename="${name}" class="dropdown-item">
@@ -254,6 +246,7 @@ class EmployeeJS {
      * Author hieunv 26/07/2021
      */
     btnAddOnClick(seft, thisElement) {
+        $('#btnBuy').css('display', 'none');
         console.log(seft);
         seft.flagAdd = 1;
         $('.dialog').css("visibility", "visible");
@@ -262,11 +255,11 @@ class EmployeeJS {
         $('.autofocus').focus();
         //lấy mã nhân viên mới binding vào form
         $.ajax({
-            url: "http://localhost:59749/api/Employees/NewEmployeeId",
+            url: "http://localhost:59749/api/Customers/NewCustomerId",
             method: 'GET',
 
         }).done(res => {
-            $('#inputEmployeeCode').val("NV-" + res);
+            $('#inputEmployeeCode').val("KH-"+res);
         }).fail(res => {
 
         });
@@ -280,20 +273,20 @@ class EmployeeJS {
      * Author hieunv 27/07/2021
      */
     btnDeleteOnClick(seft, thisElement) {
-        var employees = seft.checkedEmployees;
+        var customers = seft.checkedCustomers;
         var delSuccess = 0;
         $('.popup').css('display', 'block');
         PopupJS.showPopup('danger', 'Bạn có chắc chắn muốn xóa các bản ghi được chọn?', "Xóa các bản ghi!");
         $('.popup button.btn-z').click(() => {
-            $.each(employees, function (index, item) {
+            $.each(customers, function (index, item) {
                 $.ajax({
                     url: "http://cukcuk.manhnv.net/v1/Employees/" + item,
                     method: 'DELETE'
                 }).done(res => {
                     delSuccess++;
-                    seft.checkedEmployees = seft.checkedEmployees.filter(e => e !== item);
+                    seft.checkedCustomers = seft.checkedCustomers.filter(e => e !== item);
                     seft.loadData();
-                    ToolTipJS.showMes('success', "Đã xóa thành công " + delSuccess + "/" + (employees.length) + " bản ghi!")
+                    ToolTipJS.showMes('success', "Đã xóa thành công " + delSuccess + "/" + (customers.length) + " bản ghi!")
                     $('#btnDelete').css('visibility', 'hidden');
                     $('.popup').css('display', 'none');
                 }).fail(res => {
@@ -331,7 +324,7 @@ class EmployeeJS {
      * @param {any} thisElement
      */
     btnRefreshOnClick(seft, thisElement) {
-        seft.checkedEmployees = [];
+        seft.checkedCustomers = [];
         seft.loadData();
     }
 
@@ -342,15 +335,15 @@ class EmployeeJS {
         var myUrl = "http://cukcuk.manhnv.net/v1/Employees";
         var method = 'POST';
         if (seft.flagAdd != 1) {
-            myUrl = "http://cukcuk.manhnv.net/v1/Employees/" + seft.myEmployeeId;
+            myUrl = "http://cukcuk.manhnv.net/v1/Employees/" + seft.myCustomerId;
             method = 'PUT';
         }
-        var employeeCode = $('#inputEmployeeCode').val();
+        var customerCode = $('#inputEmployeeCode').val();
         var fullName = $('#inputFullName').val();
         var identityNumber = $('#inputIdentityNumber').val();
         var email = $('#inputEmail').val();
         var phoneNumber = $('#inputPhoneNumber').val();
-        if (!(employeeCode == '' || fullName == '' || identityNumber == '' || email == '' || phoneNumber == '')) {
+        if (!(customerCode == '' || fullName == '' )) {
             var mes = 'Bạn có chắc chắn muốn câp nhật bản ghi này?';
             var title = 'Chỉnh sửa bản ghi!';
             if (seft.flagAdd == 1) {
@@ -360,27 +353,27 @@ class EmployeeJS {
             PopupJS.showPopup('warning', mes, title);
             $('.popup').css('display', 'block');
             $('.popup button.btn-x').click(() => {
-                var employee = {};
-                employee.EmployeeCode = $('#inputEmployeeCode').val();
-                employee.FullName = $('#inputFullName').val();
-                employee.DateOfBirth = $('#inputDateOfBirth').val();
-                employee.Gender = $('#inputGenderName').attr('value');
-                employee.IdentityNumber = $('#inputIdentityNumber').val();
-                employee.IdentityDate = $('#inputIdentityDate').val();
-                employee.IdentityPlace = $('#inputIdentityPlace').val();
-                employee.Email = $('#inputEmail').val();
-                employee.PhoneNumber = $('#inputPhoneNumber').val();
-                employee.PositionId = $('#inputPositionName').attr('value');
-                employee.DepartmentId = $('#inputDepartmentName').attr('value');
-                employee.PersonalTaxCode = $('#inputPersonalTaxCode').val();
-                employee.Salary = $('#inputSalary').val().replaceAll('.', '');
-                employee.JoinDate = $('#inputJoinDate').val();
-                employee.WorkStatus = $('#inputWorkStatus').attr('value');
+                var customer = {};
+                customer.CustomerId = $('#inputEmployeeCode').val();
+                customer.FullName = $('#inputFullName').val();
+                customer.DateOfBirth = $('#inputDateOfBirth').val();
+                customer.Gender = $('#inputGenderName').attr('value');
+                customer.IdentityNumber = $('#inputIdentityNumber').val();
+                customer.IdentityDate = $('#inputIdentityDate').val();
+                customer.IdentityPlace = $('#inputIdentityPlace').val();
+                customer.Email = $('#inputEmail').val();
+                customer.PhoneNumber = $('#inputPhoneNumber').val();
+                customer.PositionId = $('#inputPositionName').attr('value');
+                customer.DepartmentId = $('#inputDepartmentName').attr('value');
+                customer.PersonalTaxCode = $('#inputPersonalTaxCode').val();
+                customer.Salary = $('#inputSalary').val().replaceAll('.', '');
+                customer.JoinDate = $('#inputJoinDate').val();
+                customer.WorkStatus = $('#inputWorkStatus').attr('value');
                 // gọi ajax post dữ liệu
                 $.ajax({
                     url: myUrl,
                     method: method,
-                    data: JSON.stringify(employee),
+                    data: JSON.stringify(customer),
                     dataType: 'json',
                     contentType: 'application/json'
                 }).done(res => {
@@ -409,18 +402,19 @@ class EmployeeJS {
      * Author hieunv 26/07/2021
      */
     tableRowOnDbClick(seft, thisElement) {
+        $('#btnBuy').css('display', 'flex');
         seft.flagAdd = 0;
         $('.dialog input').removeClass('border-red');
         try {
             // Gọi api lấy dữ liệu
-            const employeeId = $(thisElement).attr('idobj');
-            seft.myEmployeeId = employeeId;
-            var myUrl = "http://cukcuk.manhnv.net/v1/Employees/" + employeeId;
+            const customerId = $(thisElement).attr('idobj');
+            seft.myCustomerId = customerId;
+            var myUrl = "http://cukcuk.manhnv.net/v1/Employees/" + customerId;
             $.ajax({
                 url: myUrl,
                 method: 'GET'
             }).done(function (res) {
-                var employee = res;
+                var customer = res;
                 $('#inputEmployeeCode').val(res['EmployeeCode']);
                 $('#inputFullName').val(res['FullName']);
                 $('#inputDateOfBirth').val(CommonJS.formatDateToValue(res['DateOfBirth']));
@@ -505,7 +499,7 @@ class EmployeeJS {
         var thischeck = $(thisElement);
         if (thischeck.is(":checked")) {
             thischeck.parents('tr').css('background-color', "#E3F3EE");
-            seft.checkedEmployees.push($(thisElement).parents('tr').attr('idobj'));
+            seft.checkedCustomers.push($(thisElement).parents('tr').attr('idobj'));
             $('#btnDelete').css('visibility', 'visible');
         } else {
 
@@ -515,8 +509,8 @@ class EmployeeJS {
                 thischeck.parents('tr').css('background-color', "#ffffff");
             }
 
-            seft.checkedEmployees = seft.checkedEmployees.filter(e => e !== thischeck.parents('tr').attr('idobj'));
-            if (seft.checkedEmployees == 0) {
+            seft.checkedCustomers = seft.checkedCustomers.filter(e => e !== thischeck.parents('tr').attr('idobj'));
+            if (seft.checkedCustomers == 0) {
                 $('#btnDelete').css('visibility', 'hidden');
             }
         }

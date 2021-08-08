@@ -1,0 +1,173 @@
+﻿.dialog-buy {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    visibility: hidden;
+    position: relative;
+    z-index:10000;
+}
+
+.dialog-modal-buy {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: black;
+    opacity: 0.5;
+}
+
+.dialog-customer-buy {
+    opacity: 1;
+    position: absolute;
+    top: 24px;
+    left: 50%;
+    margin-left: -700px;
+    width: 1400px;
+    height: calc(100vh - 48px);
+    border-radius: 5px;
+    background-color: #ffffff;
+    overflow: hidden;
+    box-shadow: 2px 2px 4px 0 rgba(0,0,0,0.5);
+}
+
+    .dialog-customer-buy .dialog-header {
+        height: 72px;
+        width: 100%;
+        float: left;
+        position: relative;
+    }
+
+        .dialog-customer-buy .dialog-header p {
+            font-size: 24px;
+            font-weight: bolder;
+            display: block;
+            line-height: 72px;
+            padding-left: 24px;
+            margin: 0;
+        }
+
+        .dialog-customer-buy .dialog-header button.btn-exit {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 30px;
+            height: 27px;
+            outline: none;
+            border: navajowhite;
+            background-color: #ffffff;
+        }
+
+
+        .dialog-customer-buy .dialog-header button i {
+            font-size: 21px;
+        }
+
+    .dialog-customer-buy .dialog-buy-content {
+        width: 100%;
+        height: calc(100% - 132px);
+        float: left;
+        overflow-y:scroll;
+        padding-left:45px;
+        box-sizing: border-box;
+    }
+
+
+    .dialog-customer-buy .dialog-footer {
+        height: 60px;
+        width: 100%;
+        float: left;
+        background-color: #E9EBEE;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+        .dialog-customer-buy .dialog-footer button {
+            width: 80px;
+            height: 40px;
+            margin-right: 25px;
+        }
+
+        .dialog-customer-buy .dialog-footer .btn-cancel {
+            border: none;
+            background-color: #E9EBEE;
+        }
+
+        .dialog-customer-buy .dialog-footer p{
+            margin-right:20px;
+            font-size:16px;
+        }
+
+
+        .item-item-buy {
+            width: 308px;
+            height: 400px;
+            float: left;
+            margin: 10px;
+            border-radius: 4px;
+            box-shadow: 2px 2px 10px 0px rgba(0,0,0,0.5);
+        }
+
+    .item-item-buy .item-img-buy {
+        height: 269px;
+        width: 100%;
+        float: left;
+        background-image: url('../../content/img/item.jpg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center center;
+    }
+
+    .item-item-buy .item-name-buy {
+        width: 100%;
+        height: 80px;
+        float: left;
+        display: block;
+        line-height: 70px;
+        margin: 0;
+        border-bottom: 1px dotted #bbb;
+        border-top: 1px dotted #bbb;
+        padding: 0;
+    }
+
+        .item-item-buy .item-name-buy p {
+            display: block;
+            line-height: 40px;
+            padding: 0;
+            text-align: center;
+            margin: 0;
+            font-size: 16px;
+        }
+
+    .item-item-buy .item-btn-buy {
+        width: 100%;
+        height: 50px;
+        float: left;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+        .item-item-buy .item-btn-buy button {
+            width: 60px;
+            display: flex;
+            justify-content: center;
+            margin-left: 10px;
+        }
+
+        .item-item-buy .item-btn-buy button i{
+            margin:0;
+        }
+
+        .item-item-buy .item-btn-buy p {
+            font-size: 16px;
+            margin-left:10px;
+        }
+
+
+.dialog {
+    position: fixed;
+    top: 0;
+}

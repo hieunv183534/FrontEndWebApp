@@ -78,11 +78,7 @@ class CommonJS {
     * */
     static checkEmail(seft, thisElement) {
         var email = $(thisElement).val()
-        if (email == '') {
-            ToolTipJS.showMes('danger', 'Thông tin này bắt buộc nhập!');
-            $(this).addClass('border-red');
-            $(this).attr('title', 'Thông tin này bắt buộc nhập!');
-        } else if (!CommonJS.validateEmail(email)) {
+        if (!CommonJS.validateEmail(email)) {
             // chuyển border thành màu đỏ cảnh báo và khi hover hiện thông tin cảnh báo
             ToolTipJS.showMes('warning', 'Email không đúng định dạng!');
             $(this).addClass('border-red');
@@ -100,7 +96,7 @@ class CommonJS {
      * @param {any} thisElement
      * Author hieunv (21/07/2021)
      */
-    static checkSalary(seft,thisElement) {
+    static checkSalary(seft, thisElement) {
         var salary = $(thisElement).val()
         if (!$.isNumeric(salary.replaceAll('.', ''))) {
             // chuyển border thành màu đỏ cảnh báo và khi hover hiện thông tin cảnh báo

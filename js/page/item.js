@@ -26,19 +26,15 @@ class EmployeeJS {
         var seft = this;
         $('.grid table tbody').empty();
         try {
-            this.dataUrl = "http://localhost:59749/api/Employees";
+            this.dataUrl = "http://cukcuk.manhnv.net/v1/Employees";
+
             //Lấy thông tin tương ứng với các cột để map vào
             $.ajax({
                 url: this.dataUrl,
-                type: 'GET',
-                success: (res) => {
-                    console.log(res);
-                }
+                method: 'GET'
             }).done(function (res) {
-                console.log(res);
                 seft.bindingData(res);
             }).fail(function (res) {
-                console.log(res);
             });
         } catch (e) {
             console.log(e);
@@ -58,25 +54,11 @@ class EmployeeJS {
             $.each(cols, function (index, th) {
                 var td = $(`<td></td>`);
                 var fieldName = $(th).attr('fieldName');
-                if (fieldName == 'check') {
+                if (fieldName == 'WorkStatus') {
+                    var value = (obj[fieldName] == 1) ? "Đang làm việc" : "Đã nghỉ việc";
+                } else if (fieldName == 'check') {
                     var value = $(`<input type="checkbox" style="width:46px; height:24px;"/>`);
-                } else if (fieldName == 'EmployeeId') {
-                    var value = "NV-" + obj[fieldName];
-                } else if (fieldName == 'Gender') {
-                    switch (obj[fieldName]) {
-                        case 1:
-                            var value = "Nam";
-                            break;
-                        case 2:
-                            var value = "Nữ";
-                            break;
-                        case 3:
-                            var value = "Không xác định";
-                            break;
-                        default:
-                            var value = "";
-                    }
-                }else {
+                } else {
                     var value = obj[fieldName];
                 }
                 var formatType = $(th).attr('formatType');
@@ -134,8 +116,8 @@ class EmployeeJS {
 
 
         //6.Sự kiện khi dbclick 1 hàng trên bảng
-        $('.grid table').on('dblclick', 'tbody tr', function () {
-            seft.tableRowOnDbClick(seft, this);
+        $('.grid-items').on('click', '.item-item .item-btn .btn-edit', function () {
+            seft.itemItemBtnEditOnClick(seft, this);
         });
 
         //14.Click vào checkbox trên các hàng
@@ -187,11 +169,14 @@ class EmployeeJS {
      * Author hieunv 26/07/2021
      * */
     loadDropdown() {
-       
-        //1.Dropdown vị trí form
+        //1.Dropdown phòng ban form
+        this.loadDropdownData("Department", 0)
+        //2.Dropdown vị trí form
         this.loadDropdownData("Position", 0);
 
-        //2.Dropdown vị trí filter
+        //3.Dropdown phòng ban filter
+        this.loadDropdownData("Department", 1);
+        //4.Dropdown vị trí filter
         this.loadDropdownData("Position", 1);
     }
 
@@ -201,7 +186,9 @@ class EmployeeJS {
     * @param {any} fieldName
      */
     loadDropdownData(fieldName, isFilter) {
-        var myUrl = "http://localhost:59749/api/Positions";
+        var myUrl = '';
+        if (fieldName == "Department") myUrl = "http://cukcuk.manhnv.net/api/Department";
+        else if (fieldName == "Position") myUrl = "http://cukcuk.manhnv.net/v1/Positions";
         if (isFilter == 1) fieldName += '1';
         $.ajax({
             url: myUrl,
@@ -210,7 +197,7 @@ class EmployeeJS {
             $(`#input${fieldName}Name .dropdown-data`).empty();
             $(`#input${fieldName}Name .dropdown-main p`).empty();
             if (isFilter == 1) {
-                var name = "Tất cả vị trí";
+                var name = (fieldName == "Position1") ? "Tất cả vị trí" : "Tất cả loại khách hàng";
                 $(`#input${fieldName}Name`).attr("value", '');
                 let dropdownItemHTML = $(`<div valueid="" valuename="${name}" class="dropdown-item item-selected">
                                             <i class="fas fa-check"></i>
@@ -227,14 +214,11 @@ class EmployeeJS {
                 var id = '';
                 var name = '';
                 if (isFilter == 1) {
-                    name = item[`PositionName`];
-                    id = item[`PositionId`];
-
+                    name = (fieldName == "Position1") ? item[`PositionName`] : item[`DepartmentName`];
+                    id = (fieldName == "Position1") ? item[`PositionId`] : item[`DepartmentId`];
                 } else {
                     name = item[`${fieldName}Name`];
                     id = item[`${fieldName}Id`];
-                    console.log(name);
-                    console.log(id);
                 }
                 let dropdownItemHTML = $(`<div valueid="${id}" valuename="${name}" class="dropdown-item">
                                             <i class="fas fa-check"></i>
@@ -256,17 +240,17 @@ class EmployeeJS {
     btnAddOnClick(seft, thisElement) {
         console.log(seft);
         seft.flagAdd = 1;
-        $('.dialog').css("visibility", "visible");
+        $('.dialog-item').css("visibility", "visible");
         $('.dialog input').val(null);
         $('.dialog input').removeClass('border-red');
         $('.autofocus').focus();
         //lấy mã nhân viên mới binding vào form
         $.ajax({
-            url: "http://localhost:59749/api/Employees/NewEmployeeId",
+            url: "http://cukcuk.manhnv.net/v1/Employees/NewEmployeeCode",
             method: 'GET',
 
         }).done(res => {
-            $('#inputEmployeeCode').val("NV-" + res);
+            $('#inputEmployeeCode').val(res);
         }).fail(res => {
 
         });
@@ -312,7 +296,7 @@ class EmployeeJS {
      * @param {any} e
      */
     btnExitOnClick(seft, thisElement) {
-        $('.dialog').css("visibility", "hidden");
+        $('.dialog-item').css("visibility", "hidden");
     }
 
     /**
@@ -322,7 +306,7 @@ class EmployeeJS {
      * Author hieunv 26/07/2021
      */
     btnCancelOnClick(seft, thisElement) {
-        $('.dialog').css("visibility", "hidden");
+        $('.dialog-item').css("visibility", "hidden");
     }
 
     /**
@@ -408,7 +392,7 @@ class EmployeeJS {
      * @param {any} thisElement
      * Author hieunv 26/07/2021
      */
-    tableRowOnDbClick(seft, thisElement) {
+    itemItemBtnEditOnClick(seft, thisElement) {
         seft.flagAdd = 0;
         $('.dialog input').removeClass('border-red');
         try {
@@ -450,7 +434,7 @@ class EmployeeJS {
 
             })
 
-            $('.dialog').css("visibility", "visible");
+            $('.dialog-item').css("visibility", "visible");
             $('.autofocus').focus();
         } catch (e) {
 

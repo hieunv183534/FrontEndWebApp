@@ -1,8 +1,16 @@
 {
   "ExpandedNodes": [
     "",
+    "\\content",
+    "\\content\\img",
+    "\\css",
+    "\\css\\base",
+    "\\css\\common",
+    "\\js",
+    "\\js\\common",
+    "\\js\\page",
     "\\page"
   ],
-  "SelectedNode": "\\page\\employee.html",
+  "SelectedNode": "\\css\\base\\button.css",
   "PreviewInSolutionExplorer": false
 }

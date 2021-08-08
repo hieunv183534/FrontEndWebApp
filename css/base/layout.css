@@ -32,7 +32,7 @@
             background-color: #fff;
             height: 24px;
             width: 100px;
-            background-image: url('../../content/img/cukcuk-logo.png');
+            background-image: url('../../content/img/logo.jpg');
             background-repeat: no-repeat;
             background-size: contain;
             transition: 0.5s;
@@ -69,23 +69,23 @@
             }
 
                 .menu .menu-body .menu-item .menu-icon.dashboard-icon {
-                    background-image: url('../../content/icon/dashboard.png');
+                    background-image: url('../../content/icon/box.svg');
                 }
 
                 .menu .menu-body .menu-item .menu-icon.document-online-icon {
-                    background-image: url('../../content/icon/document-online.png');
+                    background-image: url('../../content/icon/globe.svg');
                 }
 
                 .menu .menu-body .menu-item .menu-icon.dic-employee-icon {
-                    background-image: url('../../content/icon/dic-employee.png');
+                    background-image: url('../../content/icon/users.svg');
                 }
 
                 .menu .menu-body .menu-item .menu-icon.report-icon {
-                    background-image: url('../../content/icon/report.png');
+                    background-image: url('../../content/icon/smile.svg');
                 }
 
-                .menu .menu-body .menu-item .menu-icon.setting-icon {
-                    background-image: url('../../content/icon/setting.png');
+                .menu .menu-body .menu-item .menu-icon.items {
+                    background-image: url('../../content/icon/shopping-bag.svg');
                 }
 
             .menu .menu-body .menu-item:hover {
